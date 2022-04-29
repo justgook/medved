@@ -14,14 +14,18 @@
         * {
             margin: 0;
             padding: 0;
+            -webkit-print-color-adjust: exact !important; /* Chrome, Safari */
+            color-adjust: exact !important; /*Firefox*/
         }
 
         body {
             font-family: 'Unna', serif;
+            font-size: 4mm;
         }
 
         :root {
             --accent: #c00000;
+            --bg-image: url("40k.jpeg");
         }
 
         @page {
@@ -30,6 +34,7 @@
 
 
         .paper {
+            position: relative;
             box-sizing: border-box;
             margin: 1cm auto;
             box-shadow: rgba(0, 0, 0, 0.4) 0 30px 90px;
@@ -38,7 +43,23 @@
             padding: 1cm;
         }
 
+        .paper .bg {
+            content: ' ';
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.2;
+            background-image: var(--bg-image) !important;
+            background-repeat: no-repeat;
+            background-position: left 0;
+            background-size: cover;
+        }
+
         article {
+            position: relative;
             box-sizing: border-box;
             border: 1mm solid var(--accent);
             outline: 1mm solid var(--accent);
@@ -93,7 +114,7 @@
             display: grid;
             grid-template: repeat(3, 1fr) / repeat(2, 1fr);
             grid-auto-flow: column;
-            padding: 0.5cm;
+            padding: 0 0.5cm;
         }
 
         .main label {
@@ -104,19 +125,87 @@
             padding-right: 0.5cm;
         }
 
-        h2 {
-            text-transform: uppercase;
+        h2, h3, .h2, .h3 {
             color: var(--accent);
             font-weight: 700;
+        }
+
+        h2, .h2 {
+            text-transform: uppercase;
             font-size: 5mm;
             text-align: center;
             border-bottom: 1mm solid var(--accent);
-            margin: 0 4mm;
+            margin: 0 4mm 2mm 4mm;
+        }
+
+        h3, .h3 {
+            font-size: 4mm;
+            text-transform: capitalize;
+        }
+
+        .attributes, .skills {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        .skills {
+            gap: 5mm;
+            padding: 0 5mm;
+        }
+
+        .attributes h4 {
+            font-size: 5mm;
+            text-align: center;
+            font-style: italic;
+            line-height: 1.5;
+        }
+
+        .attributes div:not(:first-child) dl {
+            border-left: 1px solid black;
+        }
+
+        .attributes dl, .skills dl {
+            display: grid;
+            grid-template: repeat(1, 1fr) / minmax(0, 1fr) auto;
+            grid-auto-flow: row;
+        }
+
+        .attributes dt {
+            text-align: center;
+            font-weight: bold;
+            font-size: 4mm;
+            line-height: 1.5;
+        }
+
+        .attributes dd {
+            padding-right: 4mm;
+            text-align: right;
+            font-size: 4mm;
+            line-height: 1.5;
+        }
+
+        .skills dt {
+            display: grid;
+            grid-template: repeat(1, 1fr) / auto minmax(0, 1fr);
+            grid-auto-flow: row;
+        }
+
+        .skills dt:after {
+            content: "";
+            display: block;
+            background-image: radial-gradient(circle, black 40%, transparent 40%);
+            background-size: 1mm 1mm;
+            background-repeat: repeat-x;
+            background-position-y: 85%;
+            margin-left: 1mm;
+            margin-right: 1mm;
+
         }
     </style>
 </head>
 <body>
 <div class="paper">
+    <div class="bg"></div>
     <article>
         <div class="main">
             <label>Name<input type="text"></label>
@@ -132,13 +221,115 @@
             <label>Generation<input type="text"></label>
         </div>
         <h2>Attributes</h2>
+        <section class="attributes">
+            <div>
+                <h4>Physical</h4>
+                <dl>
+                    <dt>Strength</dt>
+                    <dd>O O O O O</dd>
+                    <dt>Dexterity</dt>
+                    <dd>O O O O O</dd>
+                    <dt>Stamina</dt>
+                    <dd>O O O O O</dd>
+                </dl>
+            </div>
+            <div>
+                <h4>Social</h4>
+                <dl>
+                    <dt>Charisma</dt>
+                    <dd>O O O O O</dd>
+                    <dt>Manipulation</dt>
+                    <dd>O O O O O</dd>
+                    <dt>Composure</dt>
+                    <dd>O O O O O</dd>
+                </dl>
+            </div>
+            <div>
+                <h4>Mental</h4>
+                <dl>
+                    <dt>Intelligence</dt>
+                    <dd>O O O O O</dd>
+                    <dt>Wits</dt>
+                    <dd>O O O O O</dd>
+                    <dt>Resolve</dt>
+                    <dd>O O O O O</dd>
+                </dl>
+            </div>
+        </section>
         <h2>Skills</h2>
+
+        <section class="skills">
+            <dl>
+                <dt>Athletics</dt>
+                <dd>O O O O O</dd>
+                <dt>Brawl</dt>
+                <dd>O O O O O</dd>
+                <dt>Craft</dt>
+                <dd>O O O O O</dd>
+                <dt>Drive</dt>
+                <dd>O O O O O</dd>
+                <dt>Firearms</dt>
+                <dd>O O O O O</dd>
+                <dt>Melee</dt>
+                <dd>O O O O O</dd>
+                <dt>Larceny</dt>
+                <dd>O O O O O</dd>
+                <dt>Stealth</dt>
+                <dd>O O O O O</dd>
+                <dt>Survival</dt>
+                <dd>O O O O O</dd>
+            </dl>
+            <dl>
+                <dt>Animal Ken</dt>
+                <dd>O O O O O</dd>
+                <dt>Etiquette</dt>
+                <dd>O O O O O</dd>
+                <dt>Insight</dt>
+                <dd>O O O O O</dd>
+                <dt>Intimidation</dt>
+                <dd>O O O O O</dd>
+                <dt>Leadership</dt>
+                <dd>O O O O O</dd>
+                <dt>Performance</dt>
+                <dd>O O O O O</dd>
+                <dt>Persuasion</dt>
+                <dd>O O O O O</dd>
+                <dt>Streetwise</dt>
+                <dd>O O O O O</dd>
+                <dt>Subterfuge</dt>
+                <dd>O O O O O</dd>
+            </dl>
+            <dl>
+                <dt>Academics</dt>
+                <dd>O O O O O</dd>
+                <dt>Awareness</dt>
+                <dd>O O O O O</dd>
+                <dt>Finance</dt>
+                <dd>O O O O O</dd>
+                <dt>Investigation</dt>
+                <dd>O O O O O</dd>
+                <dt>Medicine</dt>
+                <dd>O O O O O</dd>
+                <dt>Occult</dt>
+                <dd>O O O O O</dd>
+                <dt>Politics</dt>
+                <dd>O O O O O</dd>
+                <dt>Science</dt>
+                <dd>O O O O O</dd>
+                <dt>Technology</dt>
+                <dd>O O O O O</dd>
+            </dl>
+        </section>
+
         <h2>Disciplines</h2>
     </article>
 </div>
 <div class="paper">
+    <div class="bg"></div>
     <article>
-        page 2
+        <h3>chronicle tenets</h3>
+        <h3>touchstones & convictions</h3>
+        <h3>clan bane</h3>
     </article>
 </div>
 <script>
