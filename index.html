@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Hello</title>
+    <meta charset="utf-8" />
+    <script src="./dat.gui.min.js"></script>
+    <link href="./reset.css"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Unna:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+          rel="stylesheet">
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Unna', serif;
+        }
+
+        :root {
+            --accent: #c00000;
+        }
+
+        @page {
+            margin: 2cm;
+        }
+
+
+        .paper {
+            box-sizing: border-box;
+            margin: 1cm auto;
+            box-shadow: rgba(0, 0, 0, 0.4) 0 30px 90px;
+            width: 210mm;
+            height: 297mm;
+            padding: 1cm;
+        }
+
+        article {
+            box-sizing: border-box;
+            border: 1mm solid var(--accent);
+            outline: 1mm solid var(--accent);
+            outline-offset: 1mm;
+            border-top-left-radius: 7mm;
+            height: 100%;
+        }
+
+
+        @media screen {
+            input {
+                all: unset;
+                width: 3cm;
+                background-image: linear-gradient(to right, black 50%, transparent 50%);
+                background-size: 10px 1px;
+                background-repeat: repeat-x;
+                background-position: 0 calc(100% - 6px);
+            }
+        }
+
+        @media print {
+            .paper {
+                width: 100vw;
+                height: 100vh;
+                box-shadow: none;
+                margin: 0;
+                page-break-before: always;
+            }
+
+            article {
+                width: calc(100vw - 2cm);
+                height: calc(100vh - 2cm);
+            }
+
+            @page {
+                margin: 0;
+            }
+
+            .dg {
+                display: none;
+            }
+        }
+
+        input {
+            width: 3cm;
+        }
+
+        .main {
+            display: grid;
+            grid-template: repeat(3, 1fr) / repeat(2, 1fr);
+            grid-auto-flow: column;
+            padding: 0.5cm;
+        }
+
+        .main label {
+            line-height: 1.5;
+            font-size: 4mm;
+            display: flex;
+            justify-content: space-between;
+            padding-right: 0.5cm;
+        }
+
+        h2 {
+            text-transform: uppercase;
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 5mm;
+            text-align: center;
+            border-bottom: 1mm solid var(--accent);
+            margin: 0 4mm;
+        }
+    </style>
+</head>
+<body>
+<div class="paper">
+    <article>
+        <div class="main">
+            <label>Name<input type="text"></label>
+            <label>Payer<input type="text"></label>
+            <label>Chronicle<input type="text"></label>
+
+            <label>Concept<input type="text"></label>
+            <label>Ambition<input type="text"></label>
+            <label>Predator<input type="text"></label>
+
+            <label>Sire<input type="text"></label>
+            <label>Clan<input type="text"></label>
+            <label>Generation<input type="text"></label>
+        </div>
+        <h2>Attributes</h2>
+        <h2>Skills</h2>
+        <h2>Disciplines</h2>
+    </article>
+</div>
+<div class="paper">
+    <article>
+        page 2
+    </article>
+</div>
+<script>
+    const obj = {
+        message: "Hello World",
+        displayOutline: false,
+
+        maxSize: 6.0,
+        speed: 5,
+
+        height: 10,
+        noiseStrength: 10.2,
+        growthSpeed: 0.2,
+
+        type: "three",
+
+        explode: function () {
+            alert("Bang!")
+        },
+
+        color0: "#ffae23", // CSS string
+        color1: [0, 128, 255], // RGB array
+        color2: [0, 128, 255, 0.3], // RGB with alpha
+        color3: { h: 350, s: 0.9, v: 0.3 }, // Hue, saturation, value
+    }
+
+    const gui = new dat.gui.GUI()
+
+    gui.remember(obj)
+
+    gui.add(obj, "message")
+    gui.add(obj, "displayOutline")
+    gui.add(obj, "explode")
+
+    gui.add(obj, "maxSize").min(-10).max(10).step(0.25)
+    gui.add(obj, "height").step(5) // Increment amount
+
+    // Choose from accepted values
+    gui.add(obj, "type", ["one", "two", "three"])
+
+    // Choose from named values
+    gui.add(obj, "speed", { Stopped: 0, Slow: 0.1, Fast: 5 })
+
+    const f1 = gui.addFolder("Colors")
+    f1.addColor(obj, "color0")
+    f1.addColor(obj, "color1")
+    f1.addColor(obj, "color2")
+    f1.addColor(obj, "color3")
+
+    const f2 = gui.addFolder("Another Folder")
+    f2.add(obj, "noiseStrength")
+
+    const f3 = f2.addFolder("Nested Folder")
+    f3.add(obj, "growthSpeed")
+
+    obj["Button with a long description"] = function () {
+        console.log("Button with a long description pressed")
+    }
+    gui.add(obj, "Button with a long description")
+    gui.close()
+
+</script>
+</body>
+</html>

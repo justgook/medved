@@ -1,0 +1,16 @@
+#Logs
+logs
+*.log
+
+#Dependencies
+gh-pages/assets
+gh-pages/assets/
+# Yarn Integrity file
+.yarn-integrity
+
+
+#OS stuff
+.DS_Store
+.vscode
+*.iml
+/.idea
