@@ -135,12 +135,14 @@
             font-size: 5mm;
             text-align: center;
             border-bottom: 1mm solid var(--accent);
-            margin: 0 4mm 2mm 4mm;
+            margin: 4mm;
         }
 
         h3, .h3 {
             font-size: 4mm;
             text-transform: capitalize;
+            text-align: center;
+            margin-bottom: 1mm;
         }
 
         .attributes, .skills {
@@ -190,7 +192,7 @@
             grid-auto-flow: row;
         }
 
-        .skills dt:after {
+        .skills dt:after ,.dots:after {
             content: "";
             display: block;
             background-image: radial-gradient(circle, black 40%, transparent 40%);
@@ -199,7 +201,56 @@
             background-position-y: 85%;
             margin-left: 1mm;
             margin-right: 1mm;
+        }
 
+        .metacurrency {
+            text-align: center;
+        }
+
+        .disciplines {
+            width: calc(100% - 10mm);
+            margin: 0 5mm;
+        }
+
+        .disciplines th,
+        .disciplines td {
+            padding: 1mm;
+        }
+
+        .disciplines th {
+            text-align: right;
+            border-bottom: 1px solid black;
+        }
+
+        .disciplines td {
+            text-align: left;
+            font-size: 3mm;
+            height: 5mm;
+            vertical-align: bottom;
+            border-bottom: 1px dashed black;
+        }
+
+        .disciplines td:not(:first-child), .disciplines th:not(:first-child) {
+            border-left: 1px solid black;
+        }
+
+        .disciplines tr:nth-child(6n):not(:last-child) td {
+            border-bottom-style: solid;
+            border-bottom-width: 2px;
+        }
+
+        .status-effect {
+            margin-top: 3mm;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .status-effect div {
+            display: grid;
+            grid-template: repeat(1, 1fr) / auto minmax(0, 1fr);
+            grid-auto-flow: row;
+            width: 25%;
+            text-align:right
         }
     </style>
 </head>
@@ -214,11 +265,11 @@
 
             <label>Concept<input type="text"></label>
             <label>Ambition<input type="text"></label>
-            <label>Predator<input type="text"></label>
+            <label>Homeworld<input type="text"></label>
 
-            <label>Sire<input type="text"></label>
-            <label>Clan<input type="text"></label>
-            <label>Generation<input type="text"></label>
+            <label>Tier<input type="text"></label>
+            <label>Faction<input type="text"></label>
+            <label>Sub-faction<input type="text"></label>
         </div>
         <h2>Attributes</h2>
         <section class="attributes">
@@ -257,7 +308,6 @@
             </div>
         </section>
         <h2>Skills</h2>
-
         <section class="skills">
             <dl>
                 <dt>Athletics</dt>
@@ -319,9 +369,93 @@
                 <dt>Technology</dt>
                 <dd>O O O O O</dd>
             </dl>
+            <div class="metacurrency">
+                <div class="h3">Health</div>
+                ▢▢▢▢▢ ▢▢▢▢▢
+            </div>
+            <div class="metacurrency">
+                <div class="h3">Willpower</div>
+                ▢▢▢▢▢ ▢▢▢▢▢
+            </div>
+            <div class="metacurrency">
+                <div class="h3">Sanity</div>
+                ▢▢▢▢▢ ▢▢▢▢▢
+            </div>
         </section>
 
         <h2>Disciplines</h2>
+        <table class="disciplines">
+            <tr>
+                <th>O O O O O</th>
+                <th>O O O O O</th>
+                <th>O O O O O</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>2</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>3</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>4</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>5</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <th>O O O O O</th>
+                <th>O O O O O</th>
+                <th>O O O O O</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>2</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>3</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>4</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>5</td>
+                <td>5</td>
+            </tr>
+        </table>
+        <div class="status-effect">
+            <div class="dots">
+                <div class="h3">Drugs</div>
+            </div>
+
+            <div>
+                <div class="h3">Corruption</div>
+                ▢▢▢▢▢
+            </div>
+        </div>
     </article>
 </div>
 <div class="paper">
