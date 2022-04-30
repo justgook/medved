@@ -66,6 +66,7 @@
             outline-offset: 1mm;
             border-top-left-radius: 7mm;
             height: 100%;
+            padding: 4mm;
         }
 
         input {
@@ -74,7 +75,6 @@
 
         @media screen {
             input {
-
                 width: 3cm;
                 background-image: linear-gradient(to right, black 50%, transparent 50%);
                 background-size: 10px 1px;
@@ -128,6 +128,8 @@
         h2, h3, .h2, .h3 {
             color: var(--accent);
             font-weight: 700;
+            margin: 4mm 0 0 0;
+            height: 5mm;
         }
 
         h2, .h2 {
@@ -135,14 +137,12 @@
             font-size: 5mm;
             text-align: center;
             border-bottom: 1mm solid var(--accent);
-            margin: 4mm;
         }
 
         h3, .h3 {
             font-size: 4mm;
             text-transform: capitalize;
             text-align: center;
-            margin-bottom: 1mm;
         }
 
         .attributes, .skills {
@@ -179,6 +179,7 @@
             line-height: 1.5;
         }
 
+
         .attributes dd {
             padding-right: 4mm;
             text-align: right;
@@ -190,17 +191,31 @@
             display: grid;
             grid-template: repeat(1, 1fr) / auto minmax(0, 1fr);
             grid-auto-flow: row;
+            align-items: end;
         }
 
-        .skills dt:after ,.dots:after {
-            content: "";
+        .skills dt:after, .dots:after {
+            content: "\00a0";
             display: block;
             background-image: radial-gradient(circle, black 40%, transparent 40%);
             background-size: 1mm 1mm;
             background-repeat: repeat-x;
-            background-position-y: 85%;
+            background-position: bottom 3px left;
             margin-left: 1mm;
             margin-right: 1mm;
+        }
+
+        .skills dd, .skills dt {
+            margin-top: 4mm;
+        }
+
+        .dots, .squares {
+            width: 100%;
+            display: grid;
+            grid-template: repeat(1, 1fr) / auto minmax(0, 1fr);
+            grid-auto-flow: row;
+            text-align: right;
+            align-items: end;
         }
 
         .metacurrency {
@@ -208,8 +223,7 @@
         }
 
         .disciplines {
-            width: calc(100% - 10mm);
-            margin: 0 5mm;
+            width: 100%;
         }
 
         .disciplines th,
@@ -243,14 +257,66 @@
             margin-top: 3mm;
             display: flex;
             justify-content: space-evenly;
+            gap: 25%;
+            padding: 0 10%;
         }
 
-        .status-effect div {
+        /*Page 2*/
+        .page2 {
+            display: flex;
+            flex-flow: column;
+        }
+
+        .page2 main {
+            flex: 1;
+        }
+
+        .three-col {
             display: grid;
-            grid-template: repeat(1, 1fr) / auto minmax(0, 1fr);
-            grid-auto-flow: row;
-            width: 25%;
-            text-align:right
+            grid-template: repeat(1, 1fr) / minmax(0, 1fr) auto minmax(0, 1fr);
+            grid-auto-flow: column;
+            gap: 0 2mm;
+        }
+
+        .cross-table {
+            width: 100%;
+        }
+
+        .cross-table th:not(:first-child), .cross-table td:not(:first-child) {
+            border-left: 1px solid black;
+        }
+
+        .cross-table tr:not(:last-child) th, .cross-table tr:not(:last-child) td {
+            border-bottom: 1px solid black;
+        }
+
+        .cross-table td {
+            padding: 2mm;
+        }
+
+
+        .talents td {
+            height: 35mm;
+        }
+
+        .flaw:not(:last-child) {
+            border-bottom: 1px solid #000;
+        }
+
+        .flaw {
+            text-align: right;
+            padding: 2mm;
+        }
+
+        .passive-skills td {
+            height: 15mm;
+        }
+
+
+        hr {
+            border-color: var(--accent);
+            border-width: 0 1mm 0 0;
+
         }
     </style>
 </head>
@@ -450,8 +516,7 @@
             <div class="dots">
                 <div class="h3">Drugs</div>
             </div>
-
-            <div>
+            <div class="squares">
                 <div class="h3">Corruption</div>
                 ▢▢▢▢▢
             </div>
@@ -460,10 +525,97 @@
 </div>
 <div class="paper">
     <div class="bg"></div>
-    <article>
-        <h3>chronicle tenets</h3>
-        <h3>touchstones & convictions</h3>
-        <h3>clan bane</h3>
+    <article class="page2">
+        <table class="talents cross-table">
+            <tr>
+                <th><h3>chronicle tenets</h3></th>
+                <th><h3>touchstones & convictions</h3></th>
+                <th><h3>clan bane</h3></th>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <main class="three-col">
+            <div>
+                <section>
+                    <h2>backgrounds, merits & flaws</h2>
+                    <div class="flaw">O O O O O</div>
+                    <div class="flaw">O O O O O</div>
+                    <div class="flaw">O O O O O</div>
+                    <div class="flaw">O O O O O</div>
+                    <div class="flaw">O O O O O</div>
+                    <div class="flaw">O O O O O</div>
+                    <div class="flaw">O O O O O</div>
+                    <div class="flaw">O O O O O</div>
+                    <div class="flaw">O O O O O</div>
+                    <div class="flaw">O O O O O</div>
+                    <div class="flaw">O O O O O</div>
+                    <div class="flaw">O O O O O</div>
+                    <div class="flaw">O O O O O</div>
+                </section>
+                <section>
+                    <h2>notes</h2>
+                </section>
+            </div>
+            <hr />
+            <section>
+                <div class="squares">
+                    <div class="h3">blood potency</div>
+                    OOOOO OOOOO
+                </div>
+                <table class="cross-table passive-skills">
+                    <tbody>
+                    <tr>
+                        <td>Blood Surge</td>
+                        <td>Mend Amount</td>
+                    </tr>
+                    <tr>
+                        <td>Power Bonus</td>
+                        <td>Rouse Re-Roll</td>
+                    </tr>
+                    <tr>
+                        <td>Feeding Penalty</td>
+                        <td>Bane Severity</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="dots">
+                    <div class="h3">total experience</div>
+                </div>
+                <div class="dots">
+                    <div class="h3">spent experience</div>
+                </div>
+                <h2>biographical data</h2>
+                <table class="cross-table">
+                    <tbody>
+                    <tr>
+                        <td>True Age</td>
+                    </tr>
+                    <tr>
+                        <td>Apparent Age</td>
+                    </tr>
+                    <tr>
+                        <td>Date of Birth</td>
+                    </tr>
+                    <tr>
+                        <td>Date of Death</td>
+                    </tr>
+                    <tr>
+                        <td style="height: 20mm">Appearance</td>
+                    </tr>
+                    <tr>
+                        <td style="height: 20mm">Distinguishing Features</td>
+                    </tr>
+                    <tr>
+                        <td>History</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
     </article>
 </div>
 <script>
