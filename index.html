@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <title>Hello</title>
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
     <script src="./dat.gui.min.js"></script>
     <link href="./reset.css"
           rel="stylesheet">
@@ -16,6 +16,10 @@
             padding: 0;
             -webkit-print-color-adjust: exact !important; /* Chrome, Safari */
             color-adjust: exact !important; /*Firefox*/
+        }
+
+        *:focus-visible {
+            outline: none;
         }
 
         body {
@@ -117,7 +121,7 @@
             padding: 0 0.5cm;
         }
 
-        .main label {
+        .main .label {
             line-height: 1.5;
             font-size: 4mm;
             display: flex;
@@ -328,131 +332,129 @@
     <div class="bg"></div>
     <article>
         <div class="main">
-            <label>Name<input type="text"></label>
-            <label>Payer<input type="text"></label>
-            <label>Chronicle<input type="text"></label>
-
-            <label>Concept<input type="text"></label>
-            <label>Ambition<input type="text"></label>
-            <label>Homeworld<input type="text"></label>
-
-            <label>Tier<input type="text"></label>
-            <label>Faction<input type="text"></label>
-            <label>Sub-faction<input type="text"></label>
+            <div class="label"><span contenteditable="true">Name</span><input type="text"></div>
+            <div class="label"><span contenteditable="true">Payer</span><input type="text"></div>
+            <div class="label"><span contenteditable="true">Chronicle</span><input type="text"></div>
+            <div class="label"><span contenteditable="true">Concept</span><input type="text"></div>
+            <div class="label"><span contenteditable="true">Ambition</span><input type="text"></div>
+            <div class="label"><span contenteditable="true">Homeworld</span><input type="text"></div>
+            <div class="label"><span contenteditable="true">Tier</span><input type="text"></div>
+            <div class="label"><span contenteditable="true">Faction</span><input type="text"></div>
+            <div class="label"><span contenteditable="true">Sub-faction</span><input type="text"></div>
         </div>
-        <h2>Attributes</h2>
+        <h2 contenteditable="true">Attributes</h2>
         <section class="attributes">
             <div>
-                <h4>Physical</h4>
+                <h4 contenteditable="true">Physical</h4>
                 <dl>
-                    <dt>Strength</dt>
+                    <dt contenteditable="true">Strength</dt>
                     <dd>O O O O O</dd>
-                    <dt>Dexterity</dt>
+                    <dt contenteditable="true">Dexterity</dt>
                     <dd>O O O O O</dd>
-                    <dt>Stamina</dt>
+                    <dt contenteditable="true">Stamina</dt>
                     <dd>O O O O O</dd>
                 </dl>
             </div>
             <div>
-                <h4>Social</h4>
+                <h4 contenteditable="true">Social</h4>
                 <dl>
-                    <dt>Charisma</dt>
+                    <dt contenteditable="true">Charisma</dt>
                     <dd>O O O O O</dd>
-                    <dt>Manipulation</dt>
+                    <dt contenteditable="true">Manipulation</dt>
                     <dd>O O O O O</dd>
-                    <dt>Composure</dt>
+                    <dt contenteditable="true">Composure</dt>
                     <dd>O O O O O</dd>
                 </dl>
             </div>
             <div>
-                <h4>Mental</h4>
+                <h4 contenteditable="true">Mental</h4>
                 <dl>
-                    <dt>Intelligence</dt>
+                    <dt contenteditable="true">Intelligence</dt>
                     <dd>O O O O O</dd>
-                    <dt>Wits</dt>
+                    <dt contenteditable="true">Wits</dt>
                     <dd>O O O O O</dd>
-                    <dt>Resolve</dt>
+                    <dt contenteditable="true">Resolve</dt>
                     <dd>O O O O O</dd>
                 </dl>
             </div>
         </section>
-        <h2>Skills</h2>
+        <h2 contenteditable="true">Skills</h2>
         <section class="skills">
             <dl>
-                <dt>Athletics</dt>
+                <dt contenteditable="true">Athletics</dt>
                 <dd>O O O O O</dd>
-                <dt>Brawl</dt>
+                <dt contenteditable="true">Brawl</dt>
                 <dd>O O O O O</dd>
-                <dt>Craft</dt>
+                <dt contenteditable="true">Craft</dt>
                 <dd>O O O O O</dd>
-                <dt>Drive</dt>
+                <dt contenteditable="true">Drive</dt>
                 <dd>O O O O O</dd>
-                <dt>Firearms</dt>
+                <dt contenteditable="true">Firearms</dt>
                 <dd>O O O O O</dd>
-                <dt>Melee</dt>
+                <dt contenteditable="true">Melee</dt>
                 <dd>O O O O O</dd>
-                <dt>Larceny</dt>
+                <dt contenteditable="true">Larceny</dt>
                 <dd>O O O O O</dd>
-                <dt>Stealth</dt>
+                <dt contenteditable="true">Stealth</dt>
                 <dd>O O O O O</dd>
-                <dt>Survival</dt>
-                <dd>O O O O O</dd>
-            </dl>
-            <dl>
-                <dt>Animal Ken</dt>
-                <dd>O O O O O</dd>
-                <dt>Etiquette</dt>
-                <dd>O O O O O</dd>
-                <dt>Insight</dt>
-                <dd>O O O O O</dd>
-                <dt>Intimidation</dt>
-                <dd>O O O O O</dd>
-                <dt>Leadership</dt>
-                <dd>O O O O O</dd>
-                <dt>Performance</dt>
-                <dd>O O O O O</dd>
-                <dt>Persuasion</dt>
-                <dd>O O O O O</dd>
-                <dt>Streetwise</dt>
-                <dd>O O O O O</dd>
-                <dt>Subterfuge</dt>
+                <dt contenteditable="true">Survival</dt>
                 <dd>O O O O O</dd>
             </dl>
             <dl>
-                <dt>Academics</dt>
+                <dt contenteditable="true">Animal Ken</dt>
                 <dd>O O O O O</dd>
-                <dt>Awareness</dt>
+                <dt contenteditable="true">Etiquette</dt>
                 <dd>O O O O O</dd>
-                <dt>Finance</dt>
+                <dt contenteditable="true">Insight</dt>
                 <dd>O O O O O</dd>
-                <dt>Investigation</dt>
+                <dt contenteditable="true">Intimidation</dt>
                 <dd>O O O O O</dd>
-                <dt>Medicine</dt>
+                <dt contenteditable="true">Leadership</dt>
                 <dd>O O O O O</dd>
-                <dt>Occult</dt>
+                <dt contenteditable="true">Performance</dt>
                 <dd>O O O O O</dd>
-                <dt>Politics</dt>
+                <dt contenteditable="true">Persuasion</dt>
                 <dd>O O O O O</dd>
-                <dt>Science</dt>
+                <dt contenteditable="true">Streetwise</dt>
                 <dd>O O O O O</dd>
-                <dt>Technology</dt>
+                <dt contenteditable="true">Subterfuge</dt>
+                <dd>O O O O O</dd>
+            </dl>
+            <dl>
+                <dt contenteditable="true">Academics</dt>
+                <dd>O O O O O</dd>
+                <dt contenteditable="true">Awareness</dt>
+                <dd>O O O O O</dd>
+                <dt contenteditable="true">Finance</dt>
+                <dd>O O O O O</dd>
+                <dt contenteditable="true">Investigation</dt>
+                <dd>O O O O O</dd>
+                <dt contenteditable="true">Medicine</dt>
+                <dd>O O O O O</dd>
+                <dt contenteditable="true">Occult</dt>
+                <dd>O O O O O</dd>
+                <dt contenteditable="true">Politics</dt>
+                <dd>O O O O O</dd>
+                <dt contenteditable="true">Science</dt>
+                <dd>O O O O O</dd>
+                <dt contenteditable="true">Technology</dt>
                 <dd>O O O O O</dd>
             </dl>
             <div class="metacurrency">
-                <div class="h3">Health</div>
+                <div class="h3" contenteditable="true">Health</div>
                 ▢▢▢▢▢ ▢▢▢▢▢
             </div>
             <div class="metacurrency">
-                <div class="h3">Willpower</div>
+                <div class="h3" contenteditable="true">Willpower</div>
                 ▢▢▢▢▢ ▢▢▢▢▢
             </div>
             <div class="metacurrency">
-                <div class="h3">Sanity</div>
+                <div class="h3" contenteditable="true">Sanity</div>
                 ▢▢▢▢▢ ▢▢▢▢▢
             </div>
         </section>
 
-        <h2>Disciplines</h2>
+        <h2 contenteditable="true">Disciplines</h2>
         <table class="disciplines">
             <tr>
                 <th>O O O O O</th>
@@ -517,10 +519,10 @@
         </table>
         <div class="status-effect">
             <div class="dots">
-                <div class="h3">Drugs</div>
+                <div class="h3" contenteditable="true">Drugs</div>
             </div>
             <div class="squares">
-                <div class="h3">Corruption</div>
+                <div class="h3" contenteditable="true">Corruption</div>
                 ▢▢▢▢▢
             </div>
         </div>
@@ -531,9 +533,9 @@
     <article class="page2">
         <table class="talents cross-table">
             <tr>
-                <th><h3>chronicle tenets</h3></th>
-                <th><h3>conditions & convictions</h3></th>
-                <th><h3>injury</h3></th>
+                <th><h3 contenteditable="true">chronicle tenets</h3></th>
+                <th><h3 contenteditable="true">conditions & convictions</h3></th>
+                <th><h3 contenteditable="true">injury</h3></th>
             </tr>
             <tr>
                 <td></td>
@@ -544,7 +546,7 @@
         <main class="three-col">
             <div>
                 <section>
-                    <h2>backgrounds, merits & flaws</h2>
+                    <h2 contenteditable="true">backgrounds, merits & flaws</h2>
                     <div class="flaw">O O O O O</div>
                     <div class="flaw">O O O O O</div>
                     <div class="flaw">O O O O O</div>
@@ -560,48 +562,48 @@
                     <div class="flaw">O O O O O</div>
                 </section>
                 <section>
-                    <h2>wargear</h2>
+                    <h2 contenteditable="true">wargear</h2>
                 </section>
             </div>
-            <hr />
+            <hr/>
             <section>
                 <div class="squares">
-                    <div class="h3">power</div>
+                    <div class="h3" contenteditable="true">power</div>
                     OOOOO OOOOO
                 </div>
                 <table class="cross-table passive-skills">
                     <tbody>
                     <tr>
-                        <td>Shock</td>
-                        <td>Faith</td>
+                        <td contenteditable="true">Shock</td>
+                        <td contenteditable="true">Faith</td>
                     </tr>
                     <tr>
-                        <td>Defence</td>
-                        <td>Luck</td>
+                        <td contenteditable="true">Defence</td>
+                        <td contenteditable="true">Luck</td>
                     </tr>
                     <tr>
-                        <td>Armor</td>
-                        <td>Malignancy</td>
+                        <td contenteditable="true">Armor</td>
+                        <td contenteditable="true">Malignancy</td>
                     </tr>
                     </tbody>
                 </table>
                 <div class="dots">
-                    <div class="h3">total experience</div>
+                    <div class="h3" contenteditable="true">total experience</div>
                 </div>
                 <div class="dots">
-                    <div class="h3">spent experience</div>
+                    <div class="h3" contenteditable="true">spent experience</div>
                 </div>
-                <h2>data & notes</h2>
+                <h2 contenteditable="true">data & notes</h2>
                 <table class="cross-table">
                     <tbody>
                     <tr>
                         <td style="height: 50mm"></td>
                     </tr>
                     <tr>
-                        <td style="height: 20mm">Distinguishing Features</td>
+                        <td style="height: 20mm" contenteditable="true">Distinguishing Features</td>
                     </tr>
                     <tr>
-                        <td>History</td>
+                        <td contenteditable="true">History</td>
                     </tr>
                     </tbody>
                 </table>
@@ -630,7 +632,7 @@
         color0: "#ffae23", // CSS string
         color1: [0, 128, 255], // RGB array
         color2: [0, 128, 255, 0.3], // RGB with alpha
-        color3: { h: 350, s: 0.9, v: 0.3 }, // Hue, saturation, value
+        color3: {h: 350, s: 0.9, v: 0.3}, // Hue, saturation, value
     }
 
     const gui = new dat.gui.GUI()
@@ -648,7 +650,7 @@
     gui.add(obj, "type", ["one", "two", "three"])
 
     // Choose from named values
-    gui.add(obj, "speed", { Stopped: 0, Slow: 0.1, Fast: 5 })
+    gui.add(obj, "speed", {Stopped: 0, Slow: 0.1, Fast: 5})
 
     const f1 = gui.addFolder("Colors")
     f1.addColor(obj, "color0")
